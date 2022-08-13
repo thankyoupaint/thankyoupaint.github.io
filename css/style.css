@@ -1,0 +1,401 @@
+@charset "UTF-8";
+
+/* 共通部分 */
+html {
+  font-size: 100%;
+}
+body {
+  font-family: 'IM FELL Great Primer','Philosopher', serif;
+  line-height: 1.7;
+  color: #000;
+}
+@media (min-width: 1100px) {
+  p {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 26px;
+  }
+}
+p + p,
+p + h2,
+p + h3,
+a + a {
+  margin-top: 16px;
+}
+ul {
+  list-style-position: inside;
+}
+ a:hover {
+  opacity: 0.6;
+  text-decoration: underline;
+ }
+ img {
+  max-width: 100%;
+ }
+
+ /* HEADER */
+/* ロゴ */
+ #logo {
+  width: 300px;
+  margin-top: 16px;
+ }
+
+ /* 電話ロゴ */
+ #call-logo {
+  width: 400px;
+ }
+ @media (max-width: 800px) {
+  #call-logo {
+    display: none;
+   }
+}
+  /* LINEロゴ */
+  #line-logo {
+    width: 500px;
+   }
+   @media (max-width: 800px) {
+    #line-logo {
+      display: none;
+     }
+  }
+
+   /* ヘッダー幅の書式 */
+ .header-wrapper {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 4%;
+ }
+
+
+ /* ページヘッダー */
+ .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+
+ /* 画面幅の書式 */
+ .wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 4%;
+ }
+
+ /* 中央揃え */
+ .align-center {
+  text-align: center;
+ }
+
+/* ハンバーガーメニュー部分 */
+.sp-menu {
+  margin-top: 16px;
+  margin-left: 8px;
+}
+.sp-menu #open {
+  font-size: 32px;
+  line-height: 64px;
+  padding: 0 16px;
+  background: white;
+  border: solid silver 0.5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.sp-menu #open.hide {
+  display: none;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 150, 90, 0.95);
+  text-align: center;
+  padding: 32px;
+  opacity: 0;
+  pointer-events: none;
+  transition:  opacity .6s;
+  color: white;
+}
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.overlay #close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+}
+.overlay ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.overlay li {
+  margin-top: 24px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .3s, transform .3s;
+}
+.overlay.show li {
+  opacity: 1;
+  transform: none;
+}
+.overlay a {
+  padding: 0 24px;
+  line-height: 64px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+}
+.overlay a:hover {
+  opacity: 0.6;
+}
+
+/* PC版メニュー */
+.pc-menu {
+  display: none;
+}
+@media (min-width: 950px) {
+  .pc-menu {
+    display: block;
+    font-size: 1.25rem;
+    background-color: #FF965A;
+  }
+  .pc-menu nav {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .pc-menu ul {
+    list-style-type: none;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  .pc-menu li {
+    display: inline-block;
+
+  }
+  .pc-menu a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 0 24px;
+    line-height: 64px;
+  }
+  .pc-menu a:hover {
+    opacity: 0.6;
+    text-decoration: underline;
+  }
+  .sp-menu {
+    display: none;
+  }
+}
+
+/* ホーム画面用 */
+#home-img {
+  min-height: 80vh;
+  object-fit: cover;
+}
+@media (max-width: 450px) {
+  #home-img {
+    min-height: 50vh;
+  }
+}
+
+/* メインの内容 */
+/* セクション　背景が紫色 */
+ .bg-color {
+  background-color: #FFD1B8;
+  padding: 32px;
+}
+
+/* 見出しの設定 */
+.top-h2 {
+  padding-top: 16px;
+  font-size: 32px;
+}
+@media (max-width: 450px) {
+  .top-h2 {
+    font-size: 24px;
+  }
+}
+.h2-title {
+  font-size: 1.375rem;
+  padding: 8px 8px;
+  border-bottom: 2px #008037 solid;
+  border-top: 2px #008037 solid;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  background: rgba(182,215,168,0.3);
+  color: #008037;
+}
+.top-h3 {
+  margin-bottom: 16px;
+}
+.h3-title {
+  font-size: 1.375rem;
+  padding: 8px 8px;
+  margin-bottom: 16px;
+  background: #008037;
+  color: white;
+  border-radius: 10px;
+}
+
+/* 下線の設定 */
+.underline-color {
+  display: inline-block;
+  border-bottom: #FF965A solid 4px;
+}
+
+/* 中央に文章 */
+.center-caption {
+  width: 800px;
+  margin: 32px auto;
+}
+ @media (max-width: 900px) {
+  .center-caption {
+    max-width: 100%;
+    padding: 0 8px;
+  }
+}
+
+ /* 横並び */
+ .item-flex {
+  display: flex;
+  padding: 16px 0;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 1200PX;
+  align-items: initial;
+ }
+ /* 施工例 */
+ .item-pic {
+  max-width: 300px;
+  margin: 0 auto;
+}
+.item-cap {
+  text-align: center;
+  font-weight: bold;
+}
+ @media (max-width: 800px) {
+  .item {
+    margin: 16px 0;
+  }
+  .item-flex {
+    flex-direction: column;
+  }
+  .item-pic {
+   margin: 0 auto;
+  }
+  .item-pic img {
+    width: 500px;
+    max-width: 100%;
+  }
+  .item-cap {
+    max-width: 100%;
+    padding: 0 8px;
+  }
+}
+
+/* お客様の声 */
+.item-border {
+  width: 500px;
+  padding: 16px;
+  margin: 0 8px;
+  border-radius: 10px;
+  border: #FF965A solid 4px;
+}
+@media (max-width: 800px) {
+  .item-border {
+    margin: 16px;
+    width: 90%;
+  }
+}
+
+.okyakusama-comment {
+  padding-top: 16px;
+}
+
+/* 選ぶ理由 */
+.h2-merit {
+  text-align: center;
+}
+.img-merit {
+  width: 600px;
+}
+
+/* お問い合わせ */
+.img-otoiawase {
+  text-align: center;
+  margin: 16px 0;
+}
+.otoiawase {
+  width: 800px;
+}
+
+/* 公式LINEの予約ボタン */
+.btn {
+  text-align: center;
+  margin: 16px 0;
+}
+.line-btn {
+  background: #FF965A;
+  color: #000;
+  font-size: 2em;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,1);
+  cursor:pointer;
+  text-decoration: none;
+  padding: 8px 32px;
+}
+@media (max-width: 470px) {
+  .line-btn  {
+    font-size: 1.3rem;
+  }
+}
+
+/* 会社案内 */
+.border-bottom-color {
+  border-bottom: #FF965A solid 4px;
+}
+
+/* マップの表示 */
+iframe {
+  width: 600px;
+  height: 450px;
+}
+@media (max-width: 1100px) {
+  iframe {
+    width: 500px;
+    height: 300px;
+  }
+}
+@media (max-width: 800px) {
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+
+  /* 右側に写真を持っていく */
+  .pic-right {
+    flex-direction: row-reverse;
+  }
+
+ /* FOOTER */
+footer {
+  background: #FFD1B8;
+  padding-top: 32px;
+}
+
+.footer-sign p {
+  text-align: center;
+  margin-top: 32px;
+  padding-bottom: 16px;
+}
